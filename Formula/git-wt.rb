@@ -3,10 +3,10 @@
 class GitWt < Formula
   desc "Enhanced workflows for Git worktrees"
   homepage "https://github.com/deanputney/git-wt"
-  url "https://github.com/deanputney/git-wt/archive/refs/tags/v0.0.1.tar.gz"
-  sha256 "432d8b83e237386958835a9281ea05fb96d2e0759a557a699a0dcff63068756a"
+  url "https://github.com/deanputney/git-wt/archive/refs/tags/v0.0.2.tar.gz"
+  sha256 "1437e80a2f428f4d0f730404c91e6c418d05c36be6a32bdd9ec4e8bf993a80da"
   license "MIT"
-  version "0.0.1"
+  version "0.0.2"
 
   depends_on "git"
 
@@ -15,13 +15,13 @@ class GitWt < Formula
   end
 
   def post_install
-    # Offer to set up the git alias
-    ohai "Setting up git alias"
-    system "git", "config", "--global", "alias.wt", "!git-wt"
+    # Configure git alias using the built-in setup command
+    ohai "Configuring git alias"
+    system bin/"git-wt", "setup", "--config-only"
   rescue
     opoo "Could not set git alias automatically"
     ohai "To use git-wt as 'git wt', run:"
-    puts "  git config --global alias.wt '!git-wt'"
+    puts "  git-wt setup --config-only"
   end
 
   def caveats
@@ -29,8 +29,8 @@ class GitWt < Formula
       git-wt has been installed!
 
       The git alias 'git wt' should be configured automatically.
-      If not, you can set it up manually:
-        git config --global alias.wt '!git-wt'
+      If not, you can set it up with:
+        git-wt setup --config-only
 
       Get started:
         git wt --help
