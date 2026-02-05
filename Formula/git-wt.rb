@@ -3,15 +3,16 @@
 class GitWt < Formula
   desc "Enhanced workflows for Git worktrees"
   homepage "https://github.com/deanputney/git-wt"
-  url "https://github.com/deanputney/git-wt/archive/refs/tags/v0.0.4.tar.gz"
-  sha256 "81da21ed8cc61f53ccb883943d1d52f85ccb1a496fc9224e6c7826deabe43628"
+  url "https://github.com/deanputney/git-wt/archive/refs/tags/v0.0.5.tar.gz"
+  sha256 "29c89cfd1673b8475491f70241d376579f3a9c2f6f00791e2ef0a2fb68dd82ec"
   license "MIT"
-  version "0.0.4"
+  version "0.0.5"
 
   depends_on "git"
 
   def install
     bin.install "git-wt"
+    pkgshare.install "examples"
   end
 
   def post_install
