@@ -3,10 +3,10 @@
 class GitWt < Formula
   desc "Enhanced workflows for Git worktrees"
   homepage "https://github.com/deanputney/git-wt"
-  url "https://github.com/deanputney/git-wt/archive/refs/tags/v0.0.5.tar.gz"
-  sha256 "29c89cfd1673b8475491f70241d376579f3a9c2f6f00791e2ef0a2fb68dd82ec"
+  url "https://github.com/deanputney/git-wt/archive/refs/tags/v0.0.6.tar.gz"
+  sha256 "1484e333d5d991e02adf2aab996f8741623bea624d9723adb7fa95c4c1db489d"
   license "MIT"
-  version "0.0.5"
+  version "0.0.6"
 
   depends_on "git"
 
